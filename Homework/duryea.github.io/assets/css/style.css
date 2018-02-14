@@ -1,0 +1,137 @@
+        .index, .contact, .portfolio {
+        background-image: url("../images/background.png");
+        background-color: #cccccc;
+        
+
+    }
+
+
+
+#header {
+
+
+
+    background: #EEE;
+    
+    float: right;
+    position: relative;
+    top: 0; left: 0;
+    width: 100%;
+    height:100px;
+    text-align: left;
+    text-align: top;
+    font-size: xx-large;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    z-index: 2;
+    border: 1px solid black;
+    background-color: rgb(21, 33, 199);
+    }
+    
+
+    
+
+    
+        
+        
+
+
+    
+    }
+    header
+     #Links1{
+        margin:0;
+        display:inline;
+        }
+        
+        header, nav {
+        display:inline-block;
+        }
+        
+        nav {
+        float:right;
+        }
+        
+        nav ul{ 
+        margin:0;
+        display:inline;
+        padding:0 0 0 15px;
+        }
+        
+        nav ul li{
+        background:black;
+        color:white;
+        display:inline-block;
+        list-style:none;
+        padding:5px 15px;
+        
+        
+        }
+    #connect
+    {
+    text-align: right;
+    width: 962;
+    }
+    #connect ul /* Remove The Bullets */
+    {
+    list-style: none;
+    padding: 1;
+    margin: 0;
+    }
+    #connect li /* Place list in line */
+    {
+    float: left;
+    margin: 0 0.15em;
+    }
+    #connect li a /* Design it */
+    {
+    font-size: 0.75em;
+    background: url(background.gif) bottom left repeat-x;
+    height: 2em;
+    line-height: 2em;
+    float: left;
+    width: 8em;
+    display: block;
+    /* border: 0.1em solid #dcdce9; */
+    color: #C0C0C0;
+    text-decoration: none; /* Remove Underline */
+    text-align: center;
+    }
+       
+
+        
+    
+    
+    #banner {
+    text-align: center;
+    }
+    
+    #content {
+    position: relative;
+    padding: 10px 20px;
+    border: 3px red solid;
+    margin-left: 150px;
+    overflow: hidden;
+    background: #EADADA;
+    }
+    
+    #footer {
+    position: fixed;
+    bottom: 0px;
+    overflow: hidden;
+    padding-left: 0px;
+    margin-left: -7px;
+    margin-right: -7px;
+    margin-top: 20px;
+    
+    text-align: center;
+    font-size: 8pt;
+    background: #FEF;
+    
+    border-top-style: solid;
+    border-top-color: black;
+    border-top-width: 1px;
+    width: 100%;
+    }
+
+    
