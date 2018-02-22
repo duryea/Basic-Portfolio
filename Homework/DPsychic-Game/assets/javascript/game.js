@@ -1,37 +1,33 @@
-//available pc random choices
-var computerChoices = ["a", "b","c", "d", "e", "f", "t", "u", "v", "w", "x", "y", "z",];
+//all choices available for computer to randomly pick from
+var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-//set variable to zer0
+//set all variables to zero
 var wins = 0;
 var losses = 0;
 var guesses = 9;
-var guessesLeft = [];
+var guessesLeft = 9;
+var guessedLetters = [];
 var letterToGuess = undefined;
 
-//new variables afer key is pushed, connect to HTML for visual
+//functions for the "new" variables after game begins and user pushes keys
+//this is where connect to HTML to fill in visual data for user 
 
-var newGuessesLeft = function(){
+var newGuessesLeft = function() {
     document.querySelector("#guessLeft").innerHTML = "Guesses Left: " + guessesLeft;
-
 };
 
-//pc chooses random and displays in console.log
-
-var newLetterToGuess = function () {
+//computer chooses random letter from its choices in the variable at the top. console log chosen letter.
+var newLetterToGuess = function() {
     letterToGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
     console.log(letterToGuess);
-
 };
 
-//save keys pressed seperate by comma
-                            
-var newGuessesSoFar = function()  {
-    document.querySelector('#userGuess').innerHTML = "Your Guesses so far: " +  guessedLetters.join(', ');
-
+//store all keys pressed by user and separate by a comma
+var newGuessesSoFar = function() {
+    document.querySelector('#userGuess').innerHTML = "Your Guesses so far: " + guessedLetters.join(', ');
 };
 
-//reset function called after win or lose
- 
+//function called when we reset everything after win or lose
 var reset = function() {
     guessesLeft = 9;
     guessedLetters = [];
@@ -41,41 +37,34 @@ var reset = function() {
     newGuessesSoFar();
 }
 
-
-//create onkey function for guesses left and reduce by 1
-
-document.onKeyup = function(event){
+//When key is pressed and released it becomes the users guess, reduce guessesLeft by 1.
+document.onkeyup = function(event) {
     guessesLeft--;
 
     console.log(event.key);
     console.log(guessedLetters);
 
-    //stick to lower case
+    //make user guess lower case so it will not be case sensitive. (happened to me... that is time I'll never get back haha)
+    var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
-    var userGuesses =  String.fromCharCode(event.keyCode).toLowerCase();
-
-    //push guessed letter to userGuesses and update var functions
-
+    //push the guessed letter to userGuess, update var functions.
     guessedLetters.push(userGuess);
     newGuessesLeft();
     newGuessesSoFar();
 
-    //no guesses left user looses. Guesses Left user wins
-
+    //when user still has guesses remaining and get letter, they win. if they have no guesses left, they lose.
     if (guessesLeft > 0) {
         if (userGuess == letterToGuess) {
-            winns++;
-            document.querySelector('#win').innerHTML = "Wins: " + wins;  
-            alert("Are You Psychic ??? Go Again!!");
+            wins++;
+            document.querySelector('#win').innerHTML = "Wins: " + wins;
+            alert("You are psychic!!! Try again!");
             reset();
-}
-
+        }
     } else if (guessesLeft == 0) {
         losses++;
         document.querySelector('#loss').innerHTML = "Losses: " + losses;
-        alert("Bummer, You're Not Psychic... Go Again!");
+        alert("Are You A Psychic??? try again!");
+
         reset();
-
     }
-
 };
